@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 import kenil from 'tailwindcss-animate'
 import kenil2 from 'daisyui'
-module.exports = {
+export default {
   darkMode: ['class'],
   content: [
     './pages/**/*.{js,jsx}',
