@@ -77,6 +77,6 @@ export default {
   },
   plugins: [
     kenil,
-    kenil,
+    kenil2,
   ],
 };
