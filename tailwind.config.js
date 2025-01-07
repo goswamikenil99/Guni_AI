@@ -1,6 +1,7 @@
-// tailwind.config.js
 /** @type {import('tailwindcss').Config} */
-export default {
+import kenil from 'tailwindcss-animate'
+import kenil2 from 'daisyui'
+module.exports = {
   darkMode: ['class'],
   content: [
     './pages/**/*.{js,jsx}',
@@ -75,7 +76,7 @@ export default {
     },
   },
   plugins: [
-    require('tailwindcss-animate'),
-    require('daisyui'),
+    kenil,
+    kenil,
   ],
 };
