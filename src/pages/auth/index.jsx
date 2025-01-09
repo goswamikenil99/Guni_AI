@@ -447,7 +447,7 @@ const Auth = () => {
                 alt="Shoes"
               />
             </figure>
-            <div className="card-body text-white">
+            <div className="card-body">
               <h2 className="card-title text-center ">
                 We are delighted to inform you that you are officially
                 authorized to utilize Guni Artificial Intelligence 🧠🤖
