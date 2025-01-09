@@ -21,7 +21,9 @@ const PrivateRoute = ({ children }) => {
 function App() {
   const { userInfo, setUserInfo } = useAppStore();
   const [loading, setLoading] = useState(true);
-  console.log("Kenil");
+  useEffect(()=>{
+    window.location.reload();
+  },[])
 
   // useEffect(() => {
   //   const getUserData = async () => {
