@@ -21,14 +21,6 @@ const PrivateRoute = ({ children }) => {
 function App() {
   const { userInfo, setUserInfo } = useAppStore();
   const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    if (
-      performance.navigation.type === performance.navigation.TYPE_BACK_FORWARD
-    ) {
-      // User came back to the page
-      window.location.reload();
-    }
-  }, []);
 
   // useEffect(() => {
   //   const getUserData = async () => {
