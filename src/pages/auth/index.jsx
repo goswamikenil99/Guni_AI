@@ -30,7 +30,33 @@ const Auth = () => {
   const [step, setStep] = useState(1); // Track steps in forgot password flow
   const [Loading, setLoading] = useState(false); // Track steps in forgot password flow
 
-  
+  const user_role = sessionStorage.getItem("role");
+
+  if (user_role === "student") {
+    console.log("kenil");
+    window.open(
+      "https://sites.google.com/ganpatuniversity.ac.in/guni-ai/home/exploring-scenarios-through-guided-case-studies",
+      "_self",
+      "noopener,noreferrer"
+    );
+    return;
+  }
+  if (user_role === "admin") {
+    window.open(
+      "https://sites.google.com/ganpatuniversity.ac.in/guni-ai/ai-for-admin-staff_1",
+      "_self",
+      "noopener,noreferrer"
+    );
+    return;
+  }
+  if (user_role === "professor") {
+    window.open(
+      "https://sites.google.com/ganpatuniversity.ac.in/guni-ai/ai-for-professors_1",
+      "_self",
+      "noopener,noreferrer"
+    );
+    return;
+  }
 
   //////////////login with google
 

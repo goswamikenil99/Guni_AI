@@ -21,35 +21,14 @@ const PrivateRoute = ({ children }) => {
 function App() {
   const { userInfo, setUserInfo } = useAppStore();
   const [loading, setLoading] = useState(true);
-  useEffect(()=>{
-    const user_role = sessionStorage.getItem("role");
-
-  if (user_role === "student") {
-    console.log("kenil");
-    window.open(
-      "https://sites.google.com/ganpatuniversity.ac.in/guni-ai/home/exploring-scenarios-through-guided-case-studies",
-      "_self",
-      "noopener,noreferrer"
-    );
-    return;
-  }
-  if (user_role === "admin") {
-    window.open(
-      "https://sites.google.com/ganpatuniversity.ac.in/guni-ai/ai-for-admin-staff_1",
-      "_self",
-      "noopener,noreferrer"
-    );
-    return;
-  }
-  if (user_role === "professor") {
-    window.open(
-      "https://sites.google.com/ganpatuniversity.ac.in/guni-ai/ai-for-professors_1",
-      "_self",
-      "noopener,noreferrer"
-    );
-    return;
-  }
-  },[])
+  useEffect(() => {
+    if (
+      performance.navigation.type === performance.navigation.TYPE_BACK_FORWARD
+    ) {
+      // User came back to the page
+      window.location.reload();
+    }
+  }, []);
 
   // useEffect(() => {
   //   const getUserData = async () => {
@@ -81,10 +60,7 @@ function App() {
       <Routes>
         {/* Always redirect to Auth */}
         <Route path="/" element={<Navigate to="/auth" />} />
-        <Route
-          path="/auth"
-          element={<Auth />}
-        />
+        <Route path="/auth" element={<Auth />} />
         <Route
           path="/chat"
           element={
