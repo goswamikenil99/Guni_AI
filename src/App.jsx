@@ -22,7 +22,33 @@ function App() {
   const { userInfo, setUserInfo } = useAppStore();
   const [loading, setLoading] = useState(true);
   useEffect(()=>{
-    window.location.reload();
+    const user_role = sessionStorage.getItem("role");
+
+  if (user_role === "student") {
+    console.log("kenil");
+    window.open(
+      "https://sites.google.com/ganpatuniversity.ac.in/guni-ai/home/exploring-scenarios-through-guided-case-studies",
+      "_self",
+      "noopener,noreferrer"
+    );
+    return;
+  }
+  if (user_role === "admin") {
+    window.open(
+      "https://sites.google.com/ganpatuniversity.ac.in/guni-ai/ai-for-admin-staff_1",
+      "_self",
+      "noopener,noreferrer"
+    );
+    return;
+  }
+  if (user_role === "professor") {
+    window.open(
+      "https://sites.google.com/ganpatuniversity.ac.in/guni-ai/ai-for-professors_1",
+      "_self",
+      "noopener,noreferrer"
+    );
+    return;
+  }
   },[])
 
   // useEffect(() => {
